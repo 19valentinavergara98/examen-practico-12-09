@@ -3,7 +3,7 @@
 
 const double RADIO_TIERRA = 6371.0;
 
-double calcularDistancia(double lat1, double lon1, double lat2, double lon2) {
+extern "C" __declspec(dllexport)  double calcularDistancia(double lat1, double lon1, double lat2, double lon2) {
     lat1 = lat1 * M_PI / 180.0;
     lon1 = lon1 * M_PI / 180.0;
     lat2 = lat2 * M_PI / 180.0;

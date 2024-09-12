@@ -1,7 +1,13 @@
 #include <iostream>
+#include <windows.h>
 #include "haversine.h"
 
-int main() {    
+typedef void (*funcionCalculo)();
+
+int main() {   
+     HMODULE hModule = LoadLibraryA("haversine.dll");
+    funcionCalculo calculateDistance = (funcionCalculo)GetProcAddress(hModule, "calculateDistance"); 
+
     // Sagrada Familia
     double lat1 = 41.4036;
     double lon1 = 2.1744;
